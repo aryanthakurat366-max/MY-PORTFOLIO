@@ -33,45 +33,44 @@
         .nav-links a { text-decoration: none; color: white; margin-left: 15px; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
         .nav-links a:hover { color: var(--bright-red); }
 
-        /* Hero Section */
+        /* Hero */
         .hero { 
             display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
             padding: 60px 5%; min-height: 100vh;
         }
-        .hero-text h1 { 
-            font-size: clamp(2.5rem, 8vw, 4.8rem); 
-            font-weight: 800; color: white; margin: 10px 0; 
-            line-height: 1.1; 
-        }
+        .hero-text h1 { font-size: clamp(2.5rem, 8vw, 4.8rem); font-weight: 800; color: white; margin: 10px 0; }
         .highlight { color: var(--bright-red); }
 
-        .social-bar { 
-            margin-top: 30px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;
-        }
+        /* Social Icons */
+        .social-bar { margin-top: 30px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
         .social-bar a { 
             font-size: 1.5rem; color: var(--bright-red); background: #111; 
             width: 52px; height: 52px; display: flex; align-items: center; 
             justify-content: center; border-radius: 12px; border: 1px solid #333; transition: 0.4s;
             fill: var(--bright-red); text-decoration: none;
         }
-        .social-bar a:hover { 
-            transform: translateY(-5px); border-color: var(--bright-red);
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); background: var(--blood-red);
-            color: white; fill: white;
-        }
+        .social-bar a:hover { transform: translateY(-5px); border-color: var(--bright-red); background: var(--blood-red); color: white; fill: white; }
 
         /* Grids */
         .image-grid { display: grid; gap: 20px; margin-top: 40px; width: 100%; max-width: 1200px; }
         .image-grid img { width: 100%; border-radius: 15px; border: 2px solid #222; transition: 0.5s ease; }
-        .image-grid img:hover { transform: scale(1.03); border-color: var(--bright-red); }
-
         .hero-photos img { aspect-ratio: 1/1; object-fit: cover; }
         .academy-photos img { aspect-ratio: 16/9; object-fit: contain; background: #111; padding: 5px; }
 
+        /* Sections */
         .section { padding: 80px 5%; }
+        .skill-card { 
+            background: rgba(20, 20, 20, 0.6); padding: 30px; border-radius: 20px; 
+            border-left: 4px solid var(--blood-red); transition: 0.3s;
+        }
+        .skill-card:hover { border-left-color: var(--bright-red); background: rgba(30, 10, 10, 0.4); }
+        .badge { 
+            background: #111; border: 1px solid #333; padding: 6px 14px; 
+            border-radius: 6px; font-size: 0.85rem; display: inline-block; margin: 5px;
+        }
+        .badge-active { background: var(--blood-red); border-color: var(--bright-red); font-weight: 800; }
 
         @media (max-width: 768px) {
-            .hero-text h1 { font-size: 3rem; }
             .hero-photos { grid-template-columns: repeat(2, 1fr) !important; }
             .academy-photos { grid-template-columns: 1fr !important; }
         }
@@ -84,30 +83,26 @@
         <div class="nav-links">
             <a href="#home">HOME</a>
             <a href="#education">EDUCATION</a>
+            <a href="#skills">SKILLS</a>
             <a href="#contact-form">CONTACT</a>
         </div>
     </nav>
 
     <section id="home" class="hero">
         <div class="hero-text">
-            <p style="color: var(--bright-red); letter-spacing: 5px; font-weight: 600; font-size: 0.8rem;">ENGINEERING THE FUTURE</p>
+            <p style="color: var(--bright-red); letter-spacing: 5px; font-weight: 600; font-size: 0.8rem;">SOFTWARE ARCHITECT IN MAKING</p>
             <h1>Hi, I'm <span class="highlight">Aryan Thakur</span></h1>
-            <p style="font-size: 1.1rem; color: #888;">Software Developer | Master's in CS Candidate</p>
+            <p style="font-size: 1.1rem; color: #888;">Java Developer | M.Sc. Computer Science Candidate</p>
             
             <div class="social-bar">
-                <a href="mailto:aryanthakurat366@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-                <a href="http://www.linkedin.com/in/aryan-thakur-141641370" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/aryanthakurat366-max" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                
-                <a href="https://www.scaler.com/academy/profile/e57c8d46c05f/" target="_blank" title="Scaler">
-                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M19.5 3.75H4.5C4.08579 3.75 3.75 4.08579 3.75 4.5V19.5C3.75 19.9142 4.08579 20.25 4.5 20.25H19.5C19.9142 20.25 20.25 19.9142 20.25 19.5V4.5C20.25 4.08579 19.9142 3.75 19.5 3.75ZM6 6.75H18V8.25H6V6.75ZM6 11.25H18V12.75H6V11.25ZM6 15.75H13.5V17.25H6V15.75Z" fill="currentColor"/>
-                    </svg>
+                <a href="mailto:aryanthakurat366@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="http://www.linkedin.com/in/aryan-thakur-141641370" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/aryanthakurat366-max" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.scaler.com/academy/profile/e57c8d46c05f/" target="_blank">
+                    <svg width="24" height="24" viewBox="0 0 24 24"><path d="M19.5 3.75H4.5C4.08579 3.75 3.75 4.08579 3.75 4.5V19.5C3.75 19.9142 4.08579 20.25 4.5 20.25H19.5C19.9142 20.25 20.25 19.9142 20.25 19.5V4.5C20.25 4.08579 19.9142 3.75 19.5 3.75ZM6 6.75H18V8.25H6V6.75ZM6 11.25H18V12.75H6V11.25ZM6 15.75H13.5V17.25H6V15.75Z" fill="currentColor"/></svg>
                 </a>
-
-                <a href="https://wa.me/917206125860" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://www.instagram.com/thakur_since2002" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://discord.com/channels/@me" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
+                <a href="https://wa.me/917206125860" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/thakur_since2002" target="_blank"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
 
@@ -121,28 +116,41 @@
 
     <section id="education" class="section">
         <h2 style="text-align: center; color: white; font-size: 2.5rem; margin-bottom: 40px;">Academic <span class="highlight">Foundation</span></h2>
-        
         <div style="max-width: 1000px; margin: 0 auto;">
             <div style="background: rgba(10, 10, 10, 0.8); padding: 40px; border-radius: 20px; border: 1px solid var(--blood-red); text-align: center; margin-bottom: 30px;">
                 <h2 style="color: white; margin-bottom: 5px;">M.Sc. in Computer Science</h2>
                 <p style="color: var(--bright-red); font-weight: 600; margin-top: 0;">Scaler Neovarsity | Woolf University</p>
-                <div style="background: var(--blood-red); color: white; padding: 8px 20px; border-radius: 30px; font-weight: 800; display: inline-block; margin-top: 15px;">GPA: 3.7 / 4.0 (90%)</div>
+                <div style="background: var(--blood-red); color: white; padding: 8px 20px; border-radius: 30px; font-weight: 800; display: inline-block;">GPA: 3.7 / 4.0 (90%)</div>
+            </div>
+            <div class="image-grid academy-photos" style="grid-template-columns: repeat(3, 1fr);">
+                <div style="text-align: center;"><img src="degree.jpeg" alt="Degree"><p style="font-size: 0.8rem; color: #888; margin-top: 10px;">ENROLMENT</p></div>
+                <div style="text-align: center;"><img src="id-card.jpeg" alt="ID"><p style="font-size: 0.8rem; color: #888; margin-top: 10px;">STUDENT ID</p></div>
+                <div style="text-align: center;"><img src="percentage.jpeg" alt="Grades"><p style="font-size: 0.8rem; color: #888; margin-top: 10px;">TRANSCRIPT</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <h2 style="text-align: center; color: white; font-size: 2.5rem; margin-bottom: 40px;">Expertise & <span class="highlight">Languages</span></h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto;">
+            
+            <div class="skill-card">
+                <h3 style="color: white; margin-top: 0;"><i class="fas fa-terminal" style="color: var(--bright-red); margin-right: 10px;"></i>Tech Stack</h3>
+                <div class="badge">Java</div>
+                <div class="badge">DSA</div>
+                <div class="badge">SQL</div>
+                <div class="badge">Python (Basics)</div>
+                <div class="badge badge-active">LLD (Learning)</div>
             </div>
 
-            <div class="image-grid academy-photos" style="grid-template-columns: repeat(3, 1fr); margin-top: 20px;">
-                <div style="text-align: center;">
-                    <img src="degree.jpeg" alt="Master's Degree Status">
-                    <p style="font-size: 0.85rem; color: #aaa; margin-top: 12px; font-weight: 600;">ENROLMENT STATUS</p>
-                </div>
-                <div style="text-align: center;">
-                    <img src="id-card.jpeg" alt="Student ID Card">
-                    <p style="font-size: 0.85rem; color: #aaa; margin-top: 12px; font-weight: 600;">STUDENT ID</p>
-                </div>
-                <div style="text-align: center;">
-                    <img src="percentage.jpeg" alt="Academic Transcript">
-                    <p style="font-size: 0.85rem; color: #aaa; margin-top: 12px; font-weight: 600;">PERFORMANCE RECORDS</p>
-                </div>
+            <div class="skill-card">
+                <h3 style="color: white; margin-top: 0;"><i class="fas fa-globe" style="color: var(--bright-red); margin-right: 10px;"></i>Languages</h3>
+                <div class="badge">English</div>
+                <div class="badge">Hindi</div>
+                <div class="badge">German</div>
+                <div class="badge">Spanish</div>
             </div>
+
         </div>
     </section>
 
@@ -150,25 +158,16 @@
         <h2 style="text-align: center; color: white; font-size: 2.5rem; margin-bottom: 40px;">Let's <span class="highlight">Connect</span></h2>
         <div style="max-width: 600px; margin: 0 auto; background: rgba(10, 10, 10, 0.95); padding: 40px; border-radius: 20px; border: 1px solid var(--blood-red);">
             <form action="https://formspree.io/f/xlgwryje" method="POST">
-                <div style="margin-bottom: 20px;">
-                    <label style="display: block; color: #888; margin-bottom: 8px;">NAME</label>
-                    <input type="text" name="name" placeholder="Your Name" style="width: 100%; padding: 12px; background: #000; border: 1px solid #222; color: white; border-radius: 8px;" required>
-                </div>
-                <div style="margin-bottom: 20px;">
-                    <label style="display: block; color: #888; margin-bottom: 8px;">EMAIL</label>
-                    <input type="email" name="email" placeholder="Your Email" style="width: 100%; padding: 12px; background: #000; border: 1px solid #222; color: white; border-radius: 8px;" required>
-                </div>
-                <div style="margin-bottom: 20px;">
-                    <label style="display: block; color: #888; margin-bottom: 8px;">MESSAGE</label>
-                    <textarea name="message" rows="5" placeholder="Message..." style="width: 100%; padding: 12px; background: #000; border: 1px solid #222; color: white; border-radius: 8px;" required></textarea>
-                </div>
+                <input type="text" name="name" placeholder="Name" style="width: 100%; padding: 12px; background: #000; border: 1px solid #222; color: white; border-radius: 8px; margin-bottom: 20px;" required>
+                <input type="email" name="email" placeholder="Email" style="width: 100%; padding: 12px; background: #000; border: 1px solid #222; color: white; border-radius: 8px; margin-bottom: 20px;" required>
+                <textarea name="message" rows="5" placeholder="Message..." style="width: 100%; padding: 12px; background: #000; border: 1px solid #222; color: white; border-radius: 8px; margin-bottom: 20px;" required></textarea>
                 <button type="submit" style="background: var(--blood-red); color: white; padding: 16px; border: none; border-radius: 8px; font-weight: 800; cursor: pointer; width: 100%;">SEND MESSAGE</button>
             </form>
         </div>
     </section>
 
-    <footer style="padding: 40px; text-align: center; background: #000; border-top: 1px solid #111;">
-        <div style="font-size: 0.8rem; color: #333;">© 2026 ARYAN THAKUR | MASTER'S IN CS</div>
+    <footer style="padding: 40px; text-align: center; background: #000; border-top: 1px solid #111; font-size: 0.8rem; color: #444;">
+        © 2026 ARYAN THAKUR | JET BLACK & BLOOD RED THEME
     </footer>
 
 </body>
