@@ -11,7 +11,6 @@
             --jet-black: #050505;
             --blood-red: #8B0000;
             --pure-black: #000000;
-            --scaler-blue: #2980b9;
             --discord-blue: #5865F2;
         }
 
@@ -48,43 +47,28 @@
 
         /* Social Icons */
         .social-bar { 
-            margin-top: 30px; 
-            display: flex; 
-            gap: 12px; 
-            justify-content: center; 
-            flex-wrap: wrap;
+            margin-top: 30px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
         }
         .social-bar a { 
             font-size: 1.4rem; color: white; background: #111; 
             width: 45px; height: 45px; display: flex; align-items: center; 
             justify-content: center; border-radius: 10px; border: 1px solid #333; text-decoration: none;
-            transition: 0.3s ease;
-            overflow: hidden;
+            transition: 0.3s ease; overflow: hidden;
         }
         .social-bar a img { width: 70%; height: auto; }
         .social-bar a:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(255,0,0,0.3); }
 
-        /* FIXED IMAGE PROPORTIONS */
+        /* IMAGE PROPORTION FIX */
         .image-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-            margin-top: 40px;
-            width: 100%;
-            max-width: 1200px;
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 15px; margin-top: 40px; width: 100%; max-width: 1200px;
         }
         .image-grid img {
-            width: 100%;
-            aspect-ratio: 1/1; /* Keeps photos perfectly square */
-            object-fit: cover; /* Prevents stretching/squashing */
-            border-radius: 12px;
-            border: 2px solid #222;
-            transition: 0.4s ease;
+            width: 100%; aspect-ratio: 1/1; /* Makes all photos perfect squares */
+            object-fit: cover; /* Prevents stretching or squishing */
+            border-radius: 12px; border: 2px solid #222; transition: 0.4s ease;
         }
-        .image-grid img:hover {
-            transform: scale(1.05);
-            border-color: var(--blood-red);
-        }
+        .image-grid img:hover { transform: scale(1.05); border-color: var(--blood-red); }
 
         /* Sections */
         .section { padding: 80px 5%; }
@@ -92,42 +76,23 @@
 
         /* CONTACT FORM */
         .contact-container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: rgba(15, 15, 15, 0.9);
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid var(--blood-red);
+            max-width: 600px; margin: 0 auto; background: rgba(15, 15, 15, 0.9);
+            padding: 40px; border-radius: 20px; border: 1px solid var(--blood-red);
         }
         .form-group { margin-bottom: 20px; text-align: left; }
         .form-group label { display: block; margin-bottom: 8px; color: #aaa; font-size: 0.9rem; }
         .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            background: #000;
-            border: 1px solid #333;
-            color: white;
-            border-radius: 8px;
-            box-sizing: border-box;
-            font-family: inherit;
+            width: 100%; padding: 12px; background: #000; border: 1px solid #333;
+            color: white; border-radius: 8px; box-sizing: border-box; font-family: inherit;
         }
         .form-group input:focus, .form-group textarea:focus {
-            border-color: var(--blood-red);
-            outline: none;
-            box-shadow: 0 0 10px rgba(139, 0, 0, 0.5);
+            border-color: var(--blood-red); outline: none; box-shadow: 0 0 10px rgba(139, 0, 0, 0.5);
         }
         .submit-btn {
-            background: var(--blood-red);
-            color: white;
-            padding: 15px;
-            border: none;
-            border-radius: 8px;
-            font-weight: 800;
-            cursor: pointer;
-            width: 100%;
-            transition: 0.3s;
+            background: var(--blood-red); color: white; padding: 15px; border: none;
+            border-radius: 8px; font-weight: 800; cursor: pointer; width: 100%; transition: 0.3s;
         }
-        .submit-btn:hover { background: #ff0000; }
+        .submit-btn:hover { background: #ff0000; transform: translateY(-2px); }
 
         @media (max-width: 768px) {
             .image-grid { grid-template-columns: repeat(2, 1fr); }
@@ -186,14 +151,14 @@
     <section id="contact-form" class="section">
         <h2 class="section-title">Get In <span class="highlight">Touch</span></h2>
         <div class="contact-container">
-            <form action="https://formspree.io/f/aryanthakurat366@gmail.com" method="POST">
+            <form action="https://formspree.io/f/xlgwryje" method="POST">
                 <div class="form-group">
                     <label>Full Name</label>
                     <input type="text" name="name" placeholder="Enter your name" required>
                 </div>
                 <div class="form-group">
                     <label>Email Address</label>
-                    <input type="email" name="_replyto" placeholder="Enter your email" required>
+                    <input type="email" name="email" placeholder="Enter your email" required>
                 </div>
                 <div class="form-group">
                     <label>Message</label>
