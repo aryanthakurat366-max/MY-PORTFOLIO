@@ -10,8 +10,8 @@
         :root {
             --jet-black: #050505;
             --blood-red: #8B0000;
+            --bright-red: #FF0000;
             --pure-black: #000000;
-            --discord-blue: #5865F2;
         }
 
         html { scroll-behavior: smooth; }
@@ -29,9 +29,9 @@
             padding: 15px 5%; background: rgba(0, 0, 0, 0.95); 
             position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid var(--blood-red);
         }
-        .logo { font-size: 1.5rem; font-weight: 800; color: #ff0000; letter-spacing: 2px; }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--bright-red); letter-spacing: 2px; }
         .nav-links a { text-decoration: none; color: white; margin-left: 15px; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
-        .nav-links a:hover { color: #ff0000; }
+        .nav-links a:hover { color: var(--bright-red); }
 
         /* Hero Section */
         .hero { 
@@ -43,56 +43,70 @@
             font-weight: 800; color: white; margin: 10px 0; 
             line-height: 1.1; 
         }
-        .highlight { color: #ff0000; }
+        .highlight { color: var(--bright-red); }
 
-        /* Social Icons */
+        /* UNIFIED RED SOCIAL ICONS */
         .social-bar { 
-            margin-top: 30px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+            margin-top: 30px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;
         }
         .social-bar a { 
-            font-size: 1.4rem; color: white; background: #111; 
-            width: 45px; height: 45px; display: flex; align-items: center; 
-            justify-content: center; border-radius: 10px; border: 1px solid #333; text-decoration: none;
-            transition: 0.3s ease; overflow: hidden;
+            font-size: 1.5rem; 
+            color: var(--bright-red); /* Base color is Red */
+            background: #111; 
+            width: 50px; height: 50px; display: flex; align-items: center; 
+            justify-content: center; border-radius: 12px; border: 1px solid #333; text-decoration: none;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        .social-bar a img { width: 70%; height: auto; }
-        .social-bar a:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(255,0,0,0.3); }
+        .social-bar a i { transition: 0.3s; }
+        .social-bar a img { 
+            width: 24px; height: 24px; 
+            filter: invert(13%) sepia(94%) saturate(7461%) hue-rotate(358deg) brightness(94%) contrast(115%); 
+            /* This filter turns the Scaler logo red */
+            transition: 0.3s;
+        }
+        .social-bar a:hover { 
+            transform: translateY(-5px); 
+            border-color: var(--bright-red);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+            background: var(--blood-red);
+        }
+        .social-bar a:hover i, .social-bar a:hover img { 
+            color: white; 
+            filter: brightness(0) invert(1); /* Turns icons white on hover */
+        }
 
         /* IMAGE PROPORTION FIX */
         .image-grid {
             display: grid; grid-template-columns: repeat(4, 1fr);
-            gap: 15px; margin-top: 40px; width: 100%; max-width: 1200px;
+            gap: 20px; margin-top: 50px; width: 100%; max-width: 1200px;
         }
         .image-grid img {
-            width: 100%; aspect-ratio: 1/1; /* Makes all photos perfect squares */
-            object-fit: cover; /* Prevents stretching or squishing */
-            border-radius: 12px; border: 2px solid #222; transition: 0.4s ease;
+            width: 100%; aspect-ratio: 1/1; 
+            object-fit: cover; 
+            border-radius: 15px; border: 2px solid #222; transition: 0.5s ease;
         }
-        .image-grid img:hover { transform: scale(1.05); border-color: var(--blood-red); }
-
-        /* Sections */
-        .section { padding: 80px 5%; }
-        .section-title { text-align: center; color: white; font-size: 2.5rem; margin-bottom: 40px; letter-spacing: 2px;}
+        .image-grid img:hover { transform: scale(1.03); border-color: var(--bright-red); }
 
         /* CONTACT FORM */
         .contact-container {
-            max-width: 600px; margin: 0 auto; background: rgba(15, 15, 15, 0.9);
+            max-width: 600px; margin: 40px auto; background: rgba(10, 10, 10, 0.95);
             padding: 40px; border-radius: 20px; border: 1px solid var(--blood-red);
         }
         .form-group { margin-bottom: 20px; text-align: left; }
-        .form-group label { display: block; margin-bottom: 8px; color: #aaa; font-size: 0.9rem; }
+        .form-group label { display: block; margin-bottom: 8px; color: #888; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
         .form-group input, .form-group textarea {
-            width: 100%; padding: 12px; background: #000; border: 1px solid #333;
+            width: 100%; padding: 12px; background: #000; border: 1px solid #222;
             color: white; border-radius: 8px; box-sizing: border-box; font-family: inherit;
         }
         .form-group input:focus, .form-group textarea:focus {
-            border-color: var(--blood-red); outline: none; box-shadow: 0 0 10px rgba(139, 0, 0, 0.5);
+            border-color: var(--bright-red); outline: none; box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
         }
         .submit-btn {
-            background: var(--blood-red); color: white; padding: 15px; border: none;
+            background: var(--blood-red); color: white; padding: 16px; border: none;
             border-radius: 8px; font-weight: 800; cursor: pointer; width: 100%; transition: 0.3s;
+            text-transform: uppercase; letter-spacing: 2px;
         }
-        .submit-btn:hover { background: #ff0000; transform: translateY(-2px); }
+        .submit-btn:hover { background: var(--bright-red); letter-spacing: 4px; }
 
         @media (max-width: 768px) {
             .image-grid { grid-template-columns: repeat(2, 1fr); }
@@ -107,70 +121,70 @@
         <div class="nav-links">
             <a href="#home">HOME</a>
             <a href="#education">EDUCATION</a>
-            <a href="#credentials">CREDENTIALS</a>
             <a href="#contact-form">CONTACT</a>
         </div>
     </nav>
 
     <section id="home" class="hero">
         <div class="hero-text">
-            <p style="color: var(--blood-red); letter-spacing: 4px; font-weight: 600;">WELCOME TO MY WORLD</p>
+            <p style="color: var(--bright-red); letter-spacing: 5px; font-weight: 600; font-size: 0.8rem;">ENGINEERING THE FUTURE</p>
             <h1>Hi, I'm <span class="highlight">Aryan Thakur</span></h1>
-            <p style="font-size: 1.2rem; color: #aaa;">Software Developer | Master's in CS Candidate</p>
+            <p style="font-size: 1.1rem; color: #888; max-width: 600px; margin: 0 auto;">Full Stack Developer | Pursuing Master's in Computer Science</p>
             
             <div class="social-bar">
                 <a href="mailto:aryanthakurat366@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
                 <a href="http://www.linkedin.com/in/aryan-thakur-141641370" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 <a href="https://github.com/aryanthakurat366-max" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.scaler.com/academy/profile/e57c8d46c05f/" target="_blank" style="background: white;" title="Scaler">
+                <a href="https://www.scaler.com/academy/profile/e57c8d46c05f/" target="_blank" title="Scaler Academy">
                     <img src="https://assets.scaler.com/assets/scaler/svg/scaler-logo-db8e8203099955745d1d6046e03316f3934336d39023028e23f66f91722e0e0a.svg" alt="Scaler">
                 </a>
                 <a href="https://wa.me/917206125860" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                 <a href="https://www.instagram.com/thakur_since2002" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://discord.com/channels/@me" target="_blank" style="background: var(--discord-blue);" title="Discord"><i class="fab fa-discord"></i></a>
+                <a href="https://discord.com/channels/@me" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
             </div>
         </div>
 
         <div class="image-grid">
-            <img src="aryan 1.jpeg" alt="Aryan 1">
-            <img src="aryan 2.jfif" alt="Aryan 2">
-            <img src="aryan 3.jpeg" alt="Aryan 3">
-            <img src="aryan 4.jpeg" alt="Aryan 4">
+            <img src="aryan 1.jpeg" alt="Aryan Portfolio 1">
+            <img src="aryan 2.jfif" alt="Aryan Portfolio 2">
+            <img src="aryan 3.jpeg" alt="Aryan Portfolio 3">
+            <img src="aryan 4.jpeg" alt="Aryan Portfolio 4">
         </div>
     </section>
 
     <section id="education" class="section">
-        <h2 class="section-title">Educational Path</h2>
-        <div style="background: rgba(10, 10, 10, 0.8); padding: 30px; border-radius: 20px; border: 1px solid rgba(139, 0, 0, 0.3); max-width: 900px; margin: 0 auto; text-align: center;">
-            <h2 style="color: white; margin: 0;">Master of Science in Computer Science</h2>
-            <p style="color: var(--blood-red); font-weight: 600;">Scaler Neovarsity & Woolf University</p>
-            <div style="background: var(--blood-red); color: white; padding: 5px 15px; border-radius: 8px; font-weight: 800; display: inline-block; margin-top: 10px;">3.7 CGPA</div>
+        <h2 style="text-align: center; color: white; font-size: 2.5rem; margin-bottom: 40px;">Academic <span class="highlight">Foundation</span></h2>
+        <div style="background: rgba(10, 10, 10, 0.8); padding: 40px; border-radius: 20px; border: 1px solid rgba(139, 0, 0, 0.3); max-width: 800px; margin: 0 auto; text-align: center;">
+            <h2 style="color: white; margin-bottom: 5px;">M.Sc. in Computer Science</h2>
+            <p style="color: var(--bright-red); font-weight: 600; margin-top: 0;">Scaler Neovarsity | Woolf University</p>
+            <div style="background: var(--blood-red); color: white; padding: 8px 20px; border-radius: 30px; font-weight: 800; display: inline-block; margin-top: 15px;">GPA: 3.7 / 4.0</div>
         </div>
     </section>
 
     <section id="contact-form" class="section">
-        <h2 class="section-title">Get In <span class="highlight">Touch</span></h2>
+        <h2 style="text-align: center; color: white; font-size: 2.5rem; margin-bottom: 10px;">Connect <span class="highlight">With Me</span></h2>
+        <p style="text-align: center; color: #666; margin-bottom: 40px;">Have a project in mind? Let's talk.</p>
         <div class="contact-container">
             <form action="https://formspree.io/f/xlgwryje" method="POST">
                 <div class="form-group">
                     <label>Full Name</label>
-                    <input type="text" name="name" placeholder="Enter your name" required>
+                    <input type="text" name="name" placeholder="John Doe" required>
                 </div>
                 <div class="form-group">
                     <label>Email Address</label>
-                    <input type="email" name="email" placeholder="Enter your email" required>
+                    <input type="email" name="email" placeholder="john@example.com" required>
                 </div>
                 <div class="form-group">
-                    <label>Message</label>
-                    <textarea name="message" rows="5" placeholder="How can I help you?" required></textarea>
+                    <label>Your Message</label>
+                    <textarea name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
                 </div>
-                <button type="submit" class="submit-btn">SEND MESSAGE</button>
+                <button type="submit" class="submit-btn">Fire Message</button>
             </form>
         </div>
     </section>
 
-    <footer style="padding: 40px; text-align: center; background: #000; border-top: 1px solid #222;">
-        <div style="font-size: 0.8rem; color: #444;">© 2026 ARYAN THAKUR | JET BLACK & BLOOD RED</div>
+    <footer style="padding: 50px; text-align: center; background: #000; border-top: 1px solid #111;">
+        <div style="font-size: 0.75rem; color: #333; letter-spacing: 2px;">© 2026 ARYAN THAKUR | DESIGNED FOR IMPACT</div>
     </footer>
 
 </body>
