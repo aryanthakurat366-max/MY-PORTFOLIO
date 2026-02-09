@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aryan Thakur | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --jet-black: #050505;
+            --blood-red: #8B0000;
+            --pure-black: #000000;
+            --scaler-blue: #2980b9;
+            --discord-blue: #5865F2;
+        }
+
+        html { scroll-behavior: smooth; }
+        body { 
+            background: linear-gradient(135deg, var(--pure-black) 0%, #1a0000 100%);
+            color: #e0e0e0; 
+            font-family: 'Poppins', sans-serif; 
+            margin: 0; 
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav { 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 15px 5%; background: rgba(0, 0, 0, 0.95); 
+            position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid var(--blood-red);
+        }
+        .logo { font-size: 1.5rem; font-weight: 800; color: #ff0000; letter-spacing: 2px; }
+        .nav-links a { text-decoration: none; color: white; margin-left: 15px; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover { color: #ff0000; }
+
+        /* Hero Section */
+        .hero { 
+            display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+            padding: 60px 5%; min-height: 100vh;
+        }
+        .hero-text h1 { 
+            font-size: clamp(2.5rem, 8vw, 4.8rem); 
+            font-weight: 800; color: white; margin: 10px 0; 
+            line-height: 1.1; 
+        }
+        .highlight { color: #ff0000; }
+
+        /* Social Icons */
+        .social-bar { 
+            margin-top: 30px; 
+            display: flex; 
+            gap: 12px; 
+            justify-content: center; 
+            flex-wrap: wrap;
+        }
+        .social-bar a { 
+            font-size: 1.4rem; color: white; background: #111; 
+            width: 45px; height: 45px; display: flex; align-items: center; 
+            justify-content: center; border-radius: 10px; border: 1px solid #333; text-decoration: none;
+            transition: 0.3s ease;
+            overflow: hidden;
+        }
+        .social-bar a img { width: 100%; height: 100%; object-fit: cover; }
+        .social-bar a:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(255,0,0,0.3); }
+
+        /* Photo Grids */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 photos in a row on laptop */
+            gap: 15px;
+            margin-top: 40px;
+            width: 100%;
+            max-width: 1200px;
+        }
+        .image-grid .photo-box { text-align: center; }
+        .image-grid img {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 2px solid #222;
+            transition: 0.4s ease;
+        }
+        .image-grid img:hover {
+            transform: scale(1.05);
+            border-color: var(--blood-red);
+            box-shadow: 0 10px 20px rgba(139, 0, 0, 0.4);
+        }
+
+        /* Sections */
+        .section { padding: 60px 5%; }
+        .section-title { text-align: center; color: white; font-size: 2rem; margin-bottom: 40px; letter-spacing: 2px;}
+        .edu-card { 
+            background: rgba(10, 10, 10, 0.8); padding: 30px; border-radius: 20px; 
+            border: 1px solid rgba(139, 0, 0, 0.3); max-width: 900px; margin: 0 auto;
+        }
+        .gpa-tag { background: var(--blood-red); color: white; padding: 5px 15px; border-radius: 8px; font-weight: 800; display: inline-block; margin-top: 10px; }
+
+        @media (max-width: 768px) {
+            .image-grid { grid-template-columns: repeat(2, 1fr); } /* 2x2 on tablets/phones */
+            .hero-text h1 { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">AT</div>
+        <div class="nav-links">
+            <a href="#home">HOME</a>
+            <a href="#education">EDUCATION</a>
+            <a href="#credentials">CREDENTIALS</a>
+            <a href="#contact">SOCIALS</a>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-text">
+            <p style="color: var(--blood-red); letter-spacing: 4px; font-weight: 600;">WELCOME TO MY WORLD</p>
+            <h1>Hi, I'm <span class="highlight">Aryan Thakur</span></h1>
+            <p style="font-size: 1.2rem; color: #aaa;">Software Developer | Master's in CS Candidate</p>
+            
+            <div class="social-bar">
+                <a href="mailto:aryanthakurat366@gmail.com" title="Email Me"><i class="fas fa-envelope"></i></a>
+                <a href="http://www.linkedin.com/in/aryan-thakur-141641370" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/aryanthakurat366-max" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.scaler.com/academy/profile/e57c8d46c05f/" target="_blank" style="background: white;" title="Scaler Profile">
+                    <img src="https://assets.scaler.com/assets/scaler/svg/scaler-logo-db8e8203099955745d1d6046e03316f3934336d39023028e23f66f91722e0e0a.svg" alt="Scaler">
+                </a>
+                <a href="https://wa.me/917206125860" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/thakur_since2002" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://discord.com/channels/@me" target="_blank" style="background: var(--discord-blue);" title="Discord"><i class="fab fa-discord"></i></a>
+            </div>
+        </div>
+
+        <div class="image-grid">
+            <img src="aryan 1.jpeg" alt="Aryan 1">
+            <img src="aryan 2.jfif" alt="Aryan 2">
+            <img src="aryan 3.jpeg" alt="Aryan 3">
+            <img src="aryan 4.jpeg" alt="Aryan 4">
+        </div>
+    </section>
+
+    <section id="education" class="section">
+        <h2 class="section-title">Educational Path</h2>
+        <div class="edu-card">
+            <h2 style="color: white; margin: 0;">Master of Science in Computer Science</h2>
+            <p style="color: var(--blood-red); font-weight: 600;">Scaler Neovarsity & Woolf University</p>
+            <div class="gpa-tag">3.7 CGPA</div>
+            <p style="line-height: 1.6; margin-top: 20px; color: #ccc;">
+                Specializing in Software Development at EQF Level 7. Mastering System Design, Data Structures, and Scalable Architectures.
+            </p>
+        </div>
+    </section>
+
+    <section id="credentials" class="section">
+        <h2 class="section-title">Academic Credentials</h2>
+        <div style="display: flex; justify-content: center;">
+            <div class="image-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <div class="photo-box">
+                    <img src="DEGREE.jpeg" alt="Degree">
+                    <p style="margin-top:10px;">Official Degree</p>
+                </div>
+                <div class="photo-box">
+                    <img src="MY PERCENTAGE.jpeg" alt="Percentage">
+                    <p style="margin-top:10px;">Academic Records</p>
+                </div>
+                <div class="photo-box">
+                    <img src="id card.jpeg" alt="ID Card">
+                    <p style="margin-top:10px;">University ID</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" style="padding: 80px 5%; text-align: center; background: #000; border-top: 1px solid #222;">
+        <h2 style="color: white; font-size: 2rem;">Let's Build Something Great</h2>
+        <a href="mailto:aryanthakurat366@gmail.com" style="color: #ff0000; text-decoration: none; font-weight: 800; font-size: 1.3rem;">aryanthakurat366@gmail.com</a>
+        <div style="margin-top: 40px; font-size: 0.8rem; color: #444;">© 2026 ARYAN THAKUR | JET BLACK & BLOOD RED</div>
+    </footer>
+
+</body>
+</html>
