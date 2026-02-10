@@ -57,8 +57,55 @@
         .hero-photos img { aspect-ratio: 1/1; object-fit: cover; }
         .academy-photos img { aspect-ratio: 16/9; object-fit: contain; background: #111; padding: 5px; }
 
+        /* Projects Styling */
+        .projects-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px; 
+            max-width: 1100px; 
+            margin: 40px auto; 
+        }
+        .project-card { 
+            background: rgba(10, 10, 10, 0.9); 
+            padding: 30px; 
+            border-radius: 20px; 
+            border: 1px solid #222; 
+            transition: 0.4s; 
+            position: relative;
+        }
+        .project-card:hover { 
+            border-color: var(--bright-red); 
+            transform: translateY(-10px); 
+            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.1);
+        }
+        .project-card h3 { color: white; margin-bottom: 15px; font-size: 1.4rem; }
+        .project-card p { color: #888; font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px; }
+        .tech-tags { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 25px; }
+        .tech-tags span { 
+            background: #111; 
+            color: var(--bright-red); 
+            padding: 4px 12px; 
+            border-radius: 4px; 
+            font-size: 0.75rem; 
+            border: 1px solid #333;
+            font-weight: 600;
+        }
+        .btn { 
+            display: inline-block; 
+            background: var(--blood-red); 
+            color: white; 
+            text-decoration: none; 
+            padding: 10px 20px; 
+            border-radius: 6px; 
+            font-weight: 700; 
+            font-size: 0.8rem; 
+            transition: 0.3s;
+        }
+        .btn:hover { background: var(--bright-red); }
+
         /* Sections */
         .section { padding: 80px 5%; }
+        .section-title { text-align: center; color: white; font-size: 2.5rem; margin-bottom: 40px; }
         .skill-card { 
             background: rgba(20, 20, 20, 0.6); padding: 30px; border-radius: 20px; 
             border-left: 4px solid var(--blood-red); transition: 0.3s;
@@ -83,6 +130,7 @@
         <div class="nav-links">
             <a href="#home">HOME</a>
             <a href="#education">EDUCATION</a>
+            <a href="#projects">PROJECTS</a>
             <a href="#skills">SKILLS</a>
             <a href="#contact-form">CONTACT</a>
         </div>
@@ -115,7 +163,7 @@
     </section>
 
     <section id="education" class="section">
-        <h2 style="text-align: center; color: white; font-size: 2.5rem; margin-bottom: 40px;">Academic <span class="highlight">Foundation</span></h2>
+        <h2 class="section-title">Academic <span class="highlight">Foundation</span></h2>
         <div style="max-width: 1000px; margin: 0 auto;">
             <div style="background: rgba(10, 10, 10, 0.8); padding: 40px; border-radius: 20px; border: 1px solid var(--blood-red); text-align: center; margin-bottom: 30px;">
                 <h2 style="color: white; margin-bottom: 5px;">M.Sc. in Computer Science</h2>
@@ -130,8 +178,35 @@
         </div>
     </section>
 
+    <section id="projects" class="section">
+        <h2 class="section-title">Latest <span class="highlight">Deployments</span></h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>CALC-X9 Industrial</h3>
+                    <p>A high-precision metallic calculator featuring state-machine logic and neon UI.</p>
+                    <div class="tech-tags">
+                        <span>HTML5</span> <span>CSS3</span> <span>JavaScript</span>
+                    </div>
+                    <a href="calculator.html" class="btn">Launch Tool</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>Currency Converter Pro</h3>
+                    <p>Real-time financial tool with a premium gold-dark aesthetic and API integration.</p>
+                    <div class="tech-tags">
+                        <span>JS</span> <span>Finance API</span> <span>UI/UX</span>
+                    </div>
+                    <a href="currency-convertor.html" class="btn">Launch Tool</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="skills" class="section">
-        <h2 style="text-align: center; color: white; font-size: 2.5rem; margin-bottom: 40px;">Expertise & <span class="highlight">Languages</span></h2>
+        <h2 class="section-title">Expertise & <span class="highlight">Languages</span></h2>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto;">
             
             <div class="skill-card">
@@ -155,7 +230,7 @@
     </section>
 
     <section id="contact-form" class="section">
-        <h2 style="text-align: center; color: white; font-size: 2.5rem; margin-bottom: 40px;">Let's <span class="highlight">Connect</span></h2>
+        <h2 class="section-title">Let's <span class="highlight">Connect</span></h2>
         <div style="max-width: 600px; margin: 0 auto; background: rgba(10, 10, 10, 0.95); padding: 40px; border-radius: 20px; border: 1px solid var(--blood-red);">
             <form action="https://formspree.io/f/xlgwryje" method="POST">
                 <input type="text" name="name" placeholder="Name" style="width: 100%; padding: 12px; background: #000; border: 1px solid #222; color: white; border-radius: 8px; margin-bottom: 20px;" required>
